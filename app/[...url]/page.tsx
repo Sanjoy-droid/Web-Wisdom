@@ -33,7 +33,6 @@ const page = async ({ params }: PageProps) => {
 
   return (
     <>
-      <p>I am URL </p>
       <Conversations sessionId={sesionId} />
     </>
   );
