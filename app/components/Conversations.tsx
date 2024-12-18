@@ -20,11 +20,10 @@ const page = ({
     });
   return (
     <>
-      <div className="relative min-h-full  flex divide-y flex-col justify-between gap-2">
+      <div className="relative min-h-full  flex divide-y flex-col justify-between gap-2 ">
         <div className="flex-1 justify-between flex flex-col text-white">
           <Messages messages={messages} />
         </div>
-
         <ChatInput
           input={input}
           handleSubmit={handleSubmit}

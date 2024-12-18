@@ -4,6 +4,7 @@ import Conversations from "../components/Conversations";
 import { cookies } from "next/headers";
 
 import React from "react";
+import { init } from "next/dist/compiled/webpack/webpack";
 
 type PageProps = {
   params: {
@@ -44,7 +45,7 @@ const page = async ({ params }: PageProps) => {
 
   return (
     <>
-      <Conversations sessionId={sessionId} />
+      <Conversations sessionId={sessionId} initialMessages={initialMessages} />
     </>
   );
 };
