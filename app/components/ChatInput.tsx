@@ -24,7 +24,7 @@ const ChatInput = ({
 }: ChatInputProps) => {
   return (
     <div className="fixed bottom-0 left-0 w-full py-4 px-6 bg-indigo-50 dark:bg-gray-900">
-      <div className="max-w-4xl mx-auto relative">
+      <div className="max-w-2xl mx-auto relative">
         <div className="relative group rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
           <form
             onSubmit={(e) => {
@@ -65,6 +65,7 @@ const ChatInput = ({
             duration-300
             shadow-sm
           "
+              style={{ height: "auto", resize: "none" }}
             />
             <button
               type="submit"
