@@ -1,14 +1,22 @@
 "use client";
 import { useChat } from "ai/react";
+import { Message } from "ai/react";
 import { MessageSquare, MessagesSquare } from "lucide-react";
 import ChatInput from "./ChatInput";
 import Messages from "../components/Messages";
 
-const page = ({ sessionId }: { sessionId: string }) => {
+const page = ({
+  sessionId,
+  initialMessages,
+}: {
+  sessionId: string;
+  initialMessages: Message[];
+}) => {
   const { messages, handleSubmit, handleInputChange, input, setInput } =
     useChat({
       api: "/api/chat-stream",
       body: { sessionId },
+      initialMessages,
     });
   return (
     <>
