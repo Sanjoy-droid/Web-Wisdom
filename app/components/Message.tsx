@@ -1,5 +1,7 @@
-import React from "react";
-import { Send, Bot, User, Check } from "lucide-react";
+"use client";
+import React, { useState } from "react";
+
+import { Bot, User } from "lucide-react";
 
 type MessageProps = {
   content: string;
@@ -7,6 +9,12 @@ type MessageProps = {
 };
 
 const ChatMessage = ({ content, isUserMessage }: MessageProps) => {
+  const [promptTime] = useState(
+    new Date().toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    }),
+  );
   return (
     <div
       className={`
@@ -51,10 +59,7 @@ const ChatMessage = ({ content, isUserMessage }: MessageProps) => {
               {isUserMessage ? "You" : "AI "}
             </span>
             <span className="text-xs text-neutral-500 dark:text-neutral-400">
-              {new Date().toLocaleTimeString([], {
-                hour: "2-digit",
-                minute: "2-digit",
-              })}
+              {promptTime}
             </span>
           </div>
 

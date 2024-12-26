@@ -1,10 +1,9 @@
 "use client";
 import { useState } from "react";
-import { ClipboardCopy, MessageSquare, ArrowRight } from "lucide-react";
+import { ClipboardCopy } from "lucide-react";
 
 export default function Home() {
   const [copied, setCopied] = useState(false);
-  const [showChat, setShowChat] = useState(false);
 
   const handleCopy = () => {
     navigator.clipboard.writeText("https://web-wisdom-taupe.vercel.app/");
@@ -26,8 +25,8 @@ export default function Home() {
         </h1>
 
         {/* URL Input Section */}
-        <div className="relative group">
-          <div className="flex items-center gap-2 p-3 rounded-lg bg-gray-800/50 backdrop-blur border border-gray-700/50 transition-all duration-300 hover:border-gray-600/50">
+        <div className="relative group ">
+          <div className="flex items-center ml-36 gap-2 p-3 rounded-lg bg-gray-800/50 backdrop-blur border border-gray-700/50 transition-all duration-300 hover:border-gray-600/50  w-[30rem] ">
             <div className="flex-1 px-3 font-mono text-sm  text-blue-400 ">
               https://web-wisdom-taupe.vercel.app/
             </div>

@@ -1,7 +1,6 @@
 "use client";
 import { useChat } from "ai/react";
 import { Message } from "ai/react";
-import { MessageSquare, MessagesSquare } from "lucide-react";
 import ChatInput from "./ChatInput";
 import Messages from "../components/Messages";
 

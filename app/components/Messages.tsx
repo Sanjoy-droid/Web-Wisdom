@@ -63,11 +63,10 @@ bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,2
             {/* Footer Section */}
             <footer className="absolute bottom-6 text-sm text-gray-500 dark:text-gray-400">
               <p>
-                Powered by{" "}
+                Built with{" "}
                 <span className="font-semibold text-indigo-600 dark:text-indigo-400">
                   RAG-Chat
-                </span>{" "}
-                & Web Wisdom AI
+                </span>
               </p>
             </footer>
           </div>
