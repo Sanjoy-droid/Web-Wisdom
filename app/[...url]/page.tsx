@@ -21,7 +21,7 @@ const page = async ({ params }: PageProps) => {
   const sessionCookie = sessionCookies.get("sessionId")?.value;
   const sessionId = (fixedUrl + sessionCookie)?.replace(/\//g, "_");
 
-  const isIndexed = redis.sismember("already-indexed", sessionId);
+  const isIndexed = await redis.sismember("already-indexed", sessionId);
 
   if (!isIndexed) {
     await ragChat.context.add({
@@ -30,7 +30,7 @@ const page = async ({ params }: PageProps) => {
 
       config: { chunkOverlap: 50, chunkSize: 200 },
     });
-    redis.sadd("already-indexed", sessionId);
+    await redis.sadd("already-indexed", sessionId);
   }
 
   const initialMessages = await ragChat.history.getMessages({
