@@ -16,6 +16,7 @@ const page = ({
       body: { sessionId },
       initialMessages,
     });
+
   return (
     <>
       <div className="relative min-h-full  flex divide-y flex-col justify-between gap-2 ">

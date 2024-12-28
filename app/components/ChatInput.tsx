@@ -1,5 +1,5 @@
 import React from "react";
-import { Send, Paperclip } from "lucide-react";
+import { Send, Paperclip, Loader2 } from "lucide-react";
 import { type useChat } from "ai/react";
 
 type HandleInputChange = ReturnType<typeof useChat>["handleInputChange"];
@@ -70,22 +70,22 @@ const ChatInput = ({
             <button
               type="submit"
               className="
-            absolute 
-            bottom-5 
-            right-4 
-            p-3 
-            bg-indigo-500 
-            dark:bg-indigo-600 
-            text-white 
-            rounded-full 
-            shadow-md 
-            opacity-90 
-            hover:opacity-100 
-            hover:bg-indigo-600 
-            dark:hover:bg-indigo-700 
-            transition-all 
-            duration-300 
-            disabled:opacity-50 
+            absolute
+            bottom-5
+            right-4
+            p-3
+            bg-indigo-500
+            dark:bg-indigo-600
+            text-white
+            rounded-full
+            shadow-md
+            opacity-90
+            hover:opacity-100
+            hover:bg-indigo-600
+            dark:hover:bg-indigo-700
+            transition-all
+            duration-300
+            disabled:opacity-50
             disabled:cursor-not-allowed
           "
             >

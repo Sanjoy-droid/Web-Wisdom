@@ -12,6 +12,7 @@ type PageProps = {
 const fixUrl = (url: string[]) => {
   return url.map((element) => decodeURIComponent(element)).join("/");
 };
+
 const page = async ({ params }: PageProps) => {
   const resolvedParams = await params;
 
@@ -24,13 +25,19 @@ const page = async ({ params }: PageProps) => {
   const isIndexed = await redis.sismember("already-indexed", sessionId);
 
   if (!isIndexed) {
-    await ragChat.context.add({
-      type: "html",
-      source: fixedUrl,
+    try {
+      await ragChat.context.add({
+        type: "html",
+        source: fixedUrl,
+        config: { chunkOverlap: 20, chunkSize: 500 },
+      });
+    } catch (error) {
+      console.error("Failed to add context to RAGChat:", error);
+      throw new Error("Context addition failed");
+    }
 
-      config: { chunkOverlap: 50, chunkSize: 200 },
-    });
-    await redis.sadd("already-indexed", sessionId);
+    await redis.pipeline().sadd("already-indexed", sessionId).exec();
+    // await redis.sadd("already-indexed", sessionId);
   }
 
   const initialMessages = await ragChat.history.getMessages({
