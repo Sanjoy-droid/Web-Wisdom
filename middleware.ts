@@ -6,7 +6,7 @@ const middleware = (req: NextRequest) => {
   const cookie = req.cookies.get("sessionId");
 
   if (!cookie) {
-    req.cookies.set("sessionId", crypto.randomUUID());
+    res.cookies.set("sessionId", crypto.randomUUID());
   }
 
   return res;

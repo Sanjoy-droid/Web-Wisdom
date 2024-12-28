@@ -1,6 +1,5 @@
 import React from "react";
 import { Send, Paperclip } from "lucide-react";
-import { Textarea } from "@nextui-org/react";
 import { type useChat } from "ai/react";
 
 type HandleInputChange = ReturnType<typeof useChat>["handleInputChange"];
@@ -34,6 +33,7 @@ const ChatInput = ({
             className="relative"
           >
             <textarea
+              autoFocus
               placeholder="Send a message..."
               onChange={handleInputChange}
               value={input}
@@ -49,7 +49,7 @@ const ChatInput = ({
             pl-5
             pr-16
             py-3
-            text-medium
+            text-base
             text-indigo-900 dark:text-indigo-100
             border border-indigo-200 dark:border-indigo-800/50
             bg-indigo-50 dark:bg-indigo-950

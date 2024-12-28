@@ -6,11 +6,12 @@ export default function Home() {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("https://web-wisdom-taupe.vercel.app/");
+    navigator.clipboard.writeText(URL);
     setCopied(true);
     setTimeout(() => setCopied(false), 800);
   };
 
+  const URL = process.env.NEXT_PUBLIC_URL || "http://localhost:3000/";
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white p-4 sm:p-8">
       {/* Subtle background glow */}
@@ -28,7 +29,7 @@ export default function Home() {
         <div className="relative group ">
           <div className="flex items-center ml-36 gap-2 p-3 rounded-lg bg-gray-800/50 backdrop-blur border border-gray-700/50 transition-all duration-300 hover:border-gray-600/50  w-[30rem] ">
             <div className="flex-1 px-3 font-mono text-sm  text-blue-400 ">
-              https://web-wisdom-taupe.vercel.app/
+              {URL}
             </div>
             <p className="text-xs flex justify-center items-center text-center h-8 w-12 ">
               {copied ? "Copied!" : ""}
@@ -52,7 +53,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="absolute bottom-4 text-gray-500 text-sm">
-        Built with Upstash, Rag-Chat, Next.js, Typescript & Tailwind
+        Built with Next.js, Typescript, Upstash, Redis, Rag-Chat & Tailwind
       </footer>
     </div>
   );

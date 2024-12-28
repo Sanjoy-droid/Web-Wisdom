@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import { type Message as TMessage } from "ai/react";
 import Message from "./Message";
-import { MessageSquare } from "lucide-react";
+import { MessageCircleCode } from "lucide-react";
 
 type MessagesProps = {
   messages: TMessage[];
@@ -35,7 +35,7 @@ bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,2
           >
             {/* Animated Logo Section */}
             <div className="flex items-center justify-center bg-blue-100 dark:bg-indigo-800 rounded-full w-20 h-20 shadow-lg animate-bounce">
-              <MessageSquare className="w-10 h-10 text-blue-600 dark:text-indigo-300" />
+              <MessageCircleCode className="w-10 h-10 text-blue-600 dark:text-indigo-300" />
             </div>
 
             {/* Title Section */}

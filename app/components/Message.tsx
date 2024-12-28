@@ -1,14 +1,14 @@
 "use client";
 import React, { useState } from "react";
 
-import { Bot, User } from "lucide-react";
+import { BotMessageSquare, User } from "lucide-react";
 
 type MessageProps = {
   content: string;
   isUserMessage: boolean;
 };
 
-const ChatMessage = ({ content, isUserMessage }: MessageProps) => {
+const Message = ({ content, isUserMessage }: MessageProps) => {
   const [promptTime] = useState(
     new Date().toLocaleTimeString([], {
       hour: "2-digit",
@@ -39,7 +39,7 @@ const ChatMessage = ({ content, isUserMessage }: MessageProps) => {
           {isUserMessage ? (
             <User className="w-6 h-6" strokeWidth={1.5} />
           ) : (
-            <Bot className="w-6 h-6" strokeWidth={1.5} />
+            <BotMessageSquare className="w-6 h-6" strokeWidth={1.5} />
           )}
         </div>
 
@@ -84,4 +84,4 @@ const ChatMessage = ({ content, isUserMessage }: MessageProps) => {
   );
 };
 
-export default ChatMessage;
+export default Message;
