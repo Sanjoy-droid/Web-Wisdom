@@ -66,8 +66,7 @@ export default function Home() {
               </button>
             </div>
             <p className="mt-8 text-xl text-gray-400 text-center font-light tracking-wide max-w-2xl mx-auto leading-relaxed animate-[fadeIn_0.5s_ease-out]">
-              Paste the Link before any website URL to start chatting with that
-              website
+              Paste of URL any Website and start Asking Questions
             </p>
           </div>
         </main>
