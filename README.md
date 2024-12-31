@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Web Wisdom 🧠
 
-## Getting Started
+AI-Powered Contextual Chat for Websites using Next.js, Redis, and RAG
 
-First, run the development server:
+## Overview
+
+Web Wisdom is an intelligent chat interface that provides contextual responses based on website content. Using Retrieval-Augmented Generation (RAG) and Redis for efficient data storage and retrieval, it delivers accurate and context-aware responses to user queries.
+
+## 🚀 Features
+
+- **Contextual AI Chat**: Intelligent responses based on your website's content
+- **Redis-Powered Caching**: Fast and efficient data retrieval using Upstash Redis
+- **RAG Implementation**: Enhanced response accuracy through document retrieval
+- **Modern Tech Stack**: Built with Next.js 14 and TypeScript
+- **Responsive Design**: Beautiful UI with Tailwind CSS
+- **Real-time Processing**: Quick response times with optimized data handling
+
+## 🛠️ Tech Stack
+
+- **Frontend**: Next.js 14, TypeScript, Tailwind CSS
+- **Database**: Upstash Redis
+- **AI/ML**: RAG (Retrieval Augmented Generation)
+- **Deployment**: Vercel (recommended)
+
+## 📦 Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/web-wisdom.git
+cd web-wisdom
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Set up environment variables:
+
+```env
+UPSTASH_REDIS_REST_URL=your_redis_url
+UPSTASH_REDIS_REST_TOKEN=your_redis_token
+OPENAI_API_KEY=your_openai_key
+```
+
+4. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔧 Configuration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Redis Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Create an account on [Upstash](https://upstash.com/)
+2. Create a new Redis database
+3. Copy the REST URL and REST Token
+4. Add them to your environment variables
 
-## Learn More
+### RAG Implementation
 
-To learn more about Next.js, take a look at the following resources:
+The project uses RAG for enhanced response generation:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Document indexing in Redis
+- Vector similarity search
+- Context-aware response generation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🌟 Usage
 
-## Deploy on Vercel
+1. **Initialize the Chat**:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```typescript
+import { WebWisdomChat } from '@/components/Chat';
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<WebWisdomChat
+  websiteUrl="your-website-url"
+  apiKey="your-api-key"
+/>
+```
+
+2. **Custom Configuration**:
+
+```typescript
+// Configure Redis client
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN,
+});
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/YourFeature`
+3. Commit your changes: `git commit -m 'Add YourFeature'`
+4. Push to the branch: `git push origin feature/YourFeature`
+5. Open a pull request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## 🙏 Acknowledgments
+
+- [Upstash](https://upstash.com/) for Redis infrastructure
+- [Next.js](https://nextjs.org/) team
+- [OpenAI](https://openai.com/) for API support
+- RAG implementation community

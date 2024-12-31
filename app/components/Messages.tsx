@@ -18,7 +18,7 @@ const Page = ({ messages }: MessagesProps) => {
     }
   }, [messages]);
   return (
-    <div className="absolute top-0 h-screen  w-screen  bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] ">
+    <div className=" h-56 w-screen  bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] ">
       <div className="flex max-h-screen pb-48 flex-1 flex-col overflow-y-auto">
         {messages.length ? (
           messages.map((message, index) => (
