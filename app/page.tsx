@@ -29,6 +29,11 @@ export default function Home() {
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" && !isLoading) {
+      handleChat();
+    }
+  };
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white p-4">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -43,6 +48,7 @@ export default function Home() {
             <input
               value={site}
               onChange={(e) => setSite(e.target.value)}
+              onKeyDown={handleKeyDown}
               placeholder="Paste Your Context URL"
               className="flex-1 px-2 sm:px-3  font-mono text-xs sm:text-medium outline-none bg-transparent text-blue-400 placeholder:text-gray-500 placeholder:select-none w-full"
               disabled={isLoading}

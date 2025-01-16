@@ -13,9 +13,13 @@ const Page = ({ messages }: MessagesProps) => {
 
   // Scroll to the bottom whenever messages change
   useEffect(() => {
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
-    }
+    const scrollTimeout = setTimeout(() => {
+      if (messagesEndRef.current) {
+        messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 200);
+
+    return () => clearTimeout(scrollTimeout);
   }, [messages]);
   return (
     <div className=" h-56 w-screen  bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] ">
