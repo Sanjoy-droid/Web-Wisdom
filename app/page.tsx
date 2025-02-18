@@ -38,6 +38,7 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-indigo-500/65 via-gray-800/15 to-black text-white">
+
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute w-64 sm:w-96 h-64 sm:h-96 bg-blue-500/5 rounded-full blur-3xl top-0 right-0 animate-pulse" />
@@ -52,13 +53,13 @@ export default function Home() {
               Web Wisdom AI
             </h1>
             <div className="relative group w-full flex justify-center">
-              <div className="flex items-center w-full sm:w-[30rem] gap-2 p-2 sm:p-3 rounded-lg bg-gray-800/50 backdrop-blur border border-gray-700/50 transition-all duration-300 hover:border-gray-600/50">
+              <div className="flex items-center w-full sm:w-[30rem] gap-2 p-2 sm:p-3 rounded-lg bg-gray-800/50 backdrop-blur border border-gray-700/50 transition-all duration-300 hover:border-indigo-300/50 focus-within:border-indigo-300/50">
                 <input
                   value={site}
                   onChange={(e) => setSite(e.target.value)}
                   onKeyDown={handleKeyDown}
                   placeholder="Paste Your Context URL"
-                  className="flex-1 px-2 sm:px-3  font-mono text-xs sm:text-medium outline-none bg-transparent text-blue-400 placeholder:text-gray-500 placeholder:select-none w-full"
+                  className="flex-1 px-2 sm:px-3 font-mono text-xs sm:text-medium outline-none bg-transparent text-blue-400 placeholder:text-gray-500 placeholder:select-none w-full"
                   disabled={isLoading}
                 />
                 <button
