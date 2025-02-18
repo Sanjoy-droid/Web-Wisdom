@@ -37,7 +37,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+    <div className="relative min-h-screen bg-gradient-to-br from-indigo-500/65 via-gray-800/15 to-black text-white">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute w-64 sm:w-96 h-64 sm:h-96 bg-blue-500/5 rounded-full blur-3xl top-0 right-0 animate-pulse" />
@@ -48,7 +48,7 @@ export default function Home() {
         {/* Main content */}
         <main className="flex-1 flex flex-col items-center justify-center p-4">
           <div className="w-full max-w-3xl mx-auto space-y-6 sm:space-y-8 z-10 px-4 sm:px-8">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 text-center">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-300 text-center">
               Web Wisdom AI
             </h1>
             <div className="relative group w-full flex justify-center">

@@ -8,7 +8,7 @@ const Footer = () => {
 
       <div className="flex justify-center space-x-12">
         <Link
-          href="https://github.com/Sanjoy-droid"
+          href="https://github.com/Sanjoy-droid/Web-Wisdom"
           target="_blank"
           className="transform text-gray-500 transition duration-300 hover:scale-110 hover:text-indigo-500"
         >
